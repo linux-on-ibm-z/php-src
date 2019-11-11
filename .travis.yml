@@ -4,7 +4,7 @@ git:
 os: linux
 arch: s390x
 
-#dist: trusty
+dist: trusty
 language: c
 sudo: required
 addons:
