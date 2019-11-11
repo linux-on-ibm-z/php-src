@@ -1,11 +1,13 @@
+language: c
+
 git:
   quiet: true
 
-#os: linux
+os: linux
 arch: s390x
 
 dist: trusty
-language: c
+
 sudo: required
 addons:
   apt:
