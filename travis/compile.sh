@@ -74,9 +74,8 @@ $TS \
 --with-enchant=/usr \
 --with-kerberos \
 --enable-sysvmsg \
---without-ffi \
+--with-ffi \
 --enable-zend-test=shared \
---enable-werror \
 --with-pear \
 --without-pcre-jit
 
