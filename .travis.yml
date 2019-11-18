@@ -33,7 +33,7 @@ addons:
       - libxpm-dev
       - libxslt1-dev
       - libzip-dev
-      - libffi6
+      - postgresql
 
 
 services:
