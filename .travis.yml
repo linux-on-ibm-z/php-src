@@ -34,8 +34,6 @@ addons:
       - libxpm-dev
       - libxslt1-dev
       - libzip-dev
-      - postgresql-9.6-postgis-2.3
-
 
 services:
   - mysql
