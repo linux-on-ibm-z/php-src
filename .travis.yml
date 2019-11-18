@@ -5,6 +5,7 @@ dist: xenial
 language: c
 sudo: required
 addons:
+  postgresql: 9.6
   apt:
     packages:
       - locales
@@ -33,7 +34,7 @@ addons:
       - libxpm-dev
       - libxslt1-dev
       - libzip-dev
-      - postgresql
+      - postgresql-9.6-postgis-2.3
 
 
 services:
