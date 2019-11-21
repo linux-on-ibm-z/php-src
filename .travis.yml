@@ -5,6 +5,7 @@ dist: xenial
 language: c
 sudo: required
 addons:
+  postgresql: 9.5
   apt:
     packages:
       - locales
@@ -36,7 +37,6 @@ addons:
 
 services:
   - mysql
-  - postgresql
 
 notifications:
     email:
