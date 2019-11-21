@@ -4,6 +4,7 @@ git:
 dist: xenial
 language: c
 sudo: required
+addons:
   apt:
     packages:
       - locales
