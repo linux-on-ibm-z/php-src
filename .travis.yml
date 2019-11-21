@@ -91,7 +91,3 @@ script:
 
 after_success:
     - ccache --show-stats
-    
-branches:
-  only:
-    - s390x-travis
