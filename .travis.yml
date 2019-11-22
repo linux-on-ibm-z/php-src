@@ -5,7 +5,6 @@ dist: xenial
 language: c
 sudo: required
 addons:
-  postgresql: 9.5
   apt:
     packages:
       - locales
@@ -34,8 +33,6 @@ addons:
       - libxpm-dev
       - libxslt1-dev
       - libzip-dev
-      - postgresql
-      - postgresql-client
 
 services:
   - mysql
@@ -83,7 +80,7 @@ before_script:
     - travis_wait ./travis/compile.sh
     # Setup Extensions
     - ./travis/setup-mysql.sh
-    #- ./travis/setup-pgsql.sh
+    - ./travis/setup-pgsql.sh
 
 # Run PHPs run-tests.php
 script:
