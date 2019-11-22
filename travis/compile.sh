@@ -77,6 +77,7 @@ $TS \
 --with-ffi \
 --enable-zend-test=shared \
 --with-pear \
+--enable-werror \
 --without-pcre-jit
 
 make "-j${MAKE_JOBS}" $MAKE_QUIET
