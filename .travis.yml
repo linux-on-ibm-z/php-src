@@ -36,7 +36,8 @@ addons:
 
 services:
   - mysql
-
+  - postgresql
+  
 notifications:
     email:
        on_failure: change
