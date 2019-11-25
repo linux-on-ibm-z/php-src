@@ -5,6 +5,7 @@ if [ -z "$ARM64" ]; then
   psql --version
   sudo service postgresql start
   pg_lsclusters
+  sudo ls -la /var/log/postgresql
   sudo cat /var/log/postgresql/postgresql-9.5-main.log
   psql -c 'create database test;' -U postgres
 fi
