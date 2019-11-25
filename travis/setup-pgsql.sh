@@ -6,6 +6,7 @@ if [ -z "$ARM64" ]; then
   echo $ARM64 
   echo $USER
   psql --version
+  sudo systemctl start postgresql@9.5-main
   sudo service postgresql start
   pg_lsclusters
 

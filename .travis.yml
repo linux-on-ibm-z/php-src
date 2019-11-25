@@ -71,6 +71,8 @@ jobs:
           arch: amd64
         - env: ENABLE_ZTS=0 ENABLE_DEBUG=0
           arch: s390x
+          addons:
+            postgresql: "9.5"
 
 before_script:
     - ccache --version
