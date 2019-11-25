@@ -7,10 +7,10 @@ if [ -z "$ARM64" ]; then
   echo $USER
   echo $s390x
   psql --version
-  sudo systemctl start postgresql@9.5-main
-  sudo systemctl status postgresql@9.5-main
+  #sudo systemctl start postgresql@9.5-main
+  #sudo systemctl status postgresql@9.5-main
   
-  pg_lsclusters
+  #pg_lsclusters
 
   psql -c 'create database test;' -U postgres
 fi
