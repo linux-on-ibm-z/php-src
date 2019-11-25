@@ -4,3 +4,4 @@ echo '
 if [ -z "$ARM64" ]; then
   psql -c 'create database test;' -U postgres
 fi
+psql -c 'create database test;' -U postgres
