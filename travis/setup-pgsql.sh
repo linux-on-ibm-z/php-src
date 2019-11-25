@@ -4,6 +4,7 @@ echo '
 if [ -z "$ARM64" ]; then
   psql --version
   sudo systemctl status postgresql@9.6-main
+  sudo /etc/init.d/postgresql start
   sudo systemctl status postgresql@9.5-main
   sudo systemctl status postgresql
   psql -c 'create database test;' -U postgres
