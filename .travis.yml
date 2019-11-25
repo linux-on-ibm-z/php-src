@@ -33,8 +33,6 @@ addons:
       - libxpm-dev
       - libxslt1-dev
       - libzip-dev
-      - postgresql
-      - postgresql-client
 
 services:
   - mysql
