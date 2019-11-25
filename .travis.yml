@@ -33,8 +33,7 @@ addons:
       - libxpm-dev
       - libxslt1-dev
       - libzip-dev
-      - postgresql
-      - postgresql-contrib
+
 
 
 services:
@@ -74,7 +73,10 @@ jobs:
         - env: ENABLE_ZTS=0 ENABLE_DEBUG=0
           arch: s390x
           addons:
-            postgresql: "9.5"
+            apt:
+              packages:
+                - postgresql
+                - postgresql-contrib
 
 before_script:
     - ccache --version
