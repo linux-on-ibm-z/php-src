@@ -4,6 +4,16 @@ git:
 dist: xenial
 language: c
 sudo: required
+
+before_install:
+  - sudo /etc/init.d/postgresql stop || true
+  - sudo apt-get --purge remove postgresql-*
+  - sudo rm -Rf /etc/postgresql /var/lib/postgresql
+  - wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
+  - sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt/ precise-pgdg main 9.5" >> /etc/apt/sources.list.d/postgresql.list'
+  - sudo apt-get update
+  - sudo apt-get install postgresql-9.5
+
 addons:
   apt:
     packages:
@@ -35,8 +45,10 @@ addons:
       - libzip-dev
 
 
+
 services:
   - mysql
+  - postgresql
 
 notifications:
     email:
