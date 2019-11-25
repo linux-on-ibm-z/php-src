@@ -36,6 +36,7 @@ addons:
       - libzip-dev
       - postgresql
       - postgresql-client
+      - postgresql-server-dev-9.5
 
 services:
   - mysql
