@@ -33,12 +33,12 @@ addons:
       - libxpm-dev
       - libxslt1-dev
       - libzip-dev
-
+      - postgresql
+      - postgresql-contrib
 
 
 services:
   - mysql
-  - postgresql
 
 notifications:
     email:
