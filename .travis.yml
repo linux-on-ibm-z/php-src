@@ -91,7 +91,7 @@ before_script:
     # Enable IPv6
     - sudo sh -c 'echo 0 > /proc/sys/net/ipv6/conf/all/disable_ipv6'
     # Compile PHP
-    #- travis_wait ./travis/compile.sh
+    - travis_wait ./travis/compile.sh
     # Setup Extensions
     - if [ "$HOSTTYPE" == "s390x" ]; then sudo sed -i '85s/peer/trust/' /etc/postgresql/9.5/main/pg_hba.conf; sudo cat /etc/postgresql/9.5/main/pg_hba.conf ; else sudo cat /etc/postgresql/9.6/main/pg_hba.conf; fi      
     - ./travis/setup-mysql.sh
