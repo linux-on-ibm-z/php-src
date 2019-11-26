@@ -1,5 +1,5 @@
 #!/bin/bash
-if [ -n "$S390X" ]; then
+if [ -z "$ARM64" ]; then
   sudo mysql -e 'CREATE USER "travis"@"localhost" IDENTIFIED BY ""'
   sudo mysql -e 'GRANT ALL PRIVILEGES ON *.* TO "travis"@"localhost"'
 fi
