@@ -9,10 +9,8 @@ if [ -z "$ARM64" ]; then
   psql --version
   #sudo systemctl start postgresql@9.5-main
   #sudo systemctl status postgresql@9.5-main
-  
+  sudo service postgresql restart
   #pg_lsclusters
-  sudo -u postgres createuser --superuser postgres
-  sudo -u postgres createdb postgres
   echo "user created"
   psql -c 'create database test;' -U postgres
 fi
