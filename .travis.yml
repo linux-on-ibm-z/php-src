@@ -93,7 +93,7 @@ before_script:
     # Compile PHP
     #- travis_wait ./travis/compile.sh
     # Setup Extensions
-    - if [ "$HOSTTYPE" == "s390x" ]; then sudo sed -i '85s/peer/trust/'; sudo cat /etc/postgresql/9.5/main/pg_hba.conf ; else sudo cat /etc/postgresql/9.6/main/pg_hba.conf; fi      
+    - if [ "$HOSTTYPE" == "s390x" ]; then sudo sed -i '85s/peer/trust/' /etc/postgresql/9.5/main/pg_hba.conf; sudo cat /etc/postgresql/9.5/main/pg_hba.conf ; else sudo cat /etc/postgresql/9.6/main/pg_hba.conf; fi      
     - ./travis/setup-mysql.sh
     - ./travis/setup-pgsql.sh
 
