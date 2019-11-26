@@ -68,7 +68,7 @@ jobs:
     include:
         - env: ENABLE_ZTS=0 ENABLE_DEBUG=0
           arch: amd64
-        - env: ENABLE_ZTS=0 ENABLE_DEBUG=0
+        - env: ENABLE_ZTS=1 ENABLE_DEBUG=0
           arch: s390x
 
 before_script:
