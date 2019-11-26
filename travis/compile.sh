@@ -76,6 +76,8 @@ $TS \
 --enable-sysvmsg \
 --enable-zend-test=shared \
 --with-pear \
+--with-ffi \
+--without-ffi \
 --without-pcre-jit \
 --enable-werror
 
