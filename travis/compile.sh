@@ -77,7 +77,8 @@ $TS \
 --with-ffi \
 --enable-zend-test=shared \
 --with-pear \
---without-pcre-jit
+--without-pcre-jit \
+--enable-werror
 
 make "-j${MAKE_JOBS}" $MAKE_QUIET
 make install
