@@ -11,7 +11,8 @@ if [ -z "$ARM64" ]; then
   #sudo systemctl status postgresql@9.5-main
   
   #pg_lsclusters
-  sudo -u postgres createuser --superuser $USER
-  sudo -u postgres createdb $USER
+  sudo -u postgres createuser --superuser postgres
+  sudo -u postgres createdb postgres
+  echo "user created"
   psql -c 'create database test;' -U postgres
 fi
