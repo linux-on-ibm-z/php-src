@@ -26,7 +26,7 @@ fi
 MAKE_JOBS=${MAKE_JOBS:-$(nproc)}
 
 ./buildconf --force
-./configure 
+./configure --without-pcre-jit
 # --enable-option-checking=fatal \
 # --prefix="$HOME"/php-install \
 # $CONFIG_QUIET \
@@ -80,4 +80,4 @@ MAKE_JOBS=${MAKE_JOBS:-$(nproc)}
 # --without-pcre-jit
 
 make "-j${MAKE_JOBS}" $MAKE_QUIET
-make install
+sudo make install
