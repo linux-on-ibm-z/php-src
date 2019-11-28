@@ -93,9 +93,9 @@ static const zend_function_entry date_functions[] = {
 
 	/* Advanced Interface */
 	PHP_FE(date_create, arginfo_date_create)
-	PHP_FE(date_create_immutable, arginfo_date_create)
+	PHP_FE(date_create_immutable, arginfo_date_create_immutable)
 	PHP_FE(date_create_from_format, arginfo_date_create_from_format)
-	PHP_FE(date_create_immutable_from_format, arginfo_date_create_from_format)
+	PHP_FE(date_create_immutable_from_format, arginfo_date_create_immutable_from_format)
 	PHP_FE(date_parse, arginfo_date_parse)
 	PHP_FE(date_parse_from_format, arginfo_date_parse_from_format)
 	PHP_FE(date_get_last_errors, arginfo_date_get_last_errors)
@@ -175,8 +175,8 @@ static const zend_function_entry date_funcs_immutable[] = {
 	PHP_ME(DateTimeImmutable, __construct,   arginfo_class_DateTimeImmutable___construct, ZEND_ACC_PUBLIC)
 	PHP_ME(DateTime, __wakeup,       arginfo_class_DateTimeInterface___wakeup, ZEND_ACC_PUBLIC)
 	PHP_ME(DateTimeImmutable, __set_state,   arginfo_class_DateTimeImmutable___set_state, ZEND_ACC_PUBLIC|ZEND_ACC_STATIC)
-	PHP_ME_MAPPING(createFromFormat, date_create_immutable_from_format, arginfo_date_create_from_format, ZEND_ACC_PUBLIC|ZEND_ACC_STATIC)
-	PHP_ME_MAPPING(getLastErrors,    date_get_last_errors,    arginfo_date_get_last_errors, ZEND_ACC_PUBLIC|ZEND_ACC_STATIC)
+	PHP_ME_MAPPING(createFromFormat, date_create_immutable_from_format, arginfo_class_DateTimeImmutable_createFromFormat, ZEND_ACC_PUBLIC|ZEND_ACC_STATIC)
+	PHP_ME_MAPPING(getLastErrors,    date_get_last_errors,    arginfo_class_DateTimeImmutable_getLastErrors, ZEND_ACC_PUBLIC|ZEND_ACC_STATIC)
 	PHP_ME_MAPPING(format,           date_format,             arginfo_class_DateTimeInterface_format, 0)
 	PHP_ME_MAPPING(getTimezone, date_timezone_get,	arginfo_class_DateTimeInterface_getTimezone, 0)
 	PHP_ME_MAPPING(getOffset,	date_offset_get,	arginfo_class_DateTimeInterface_getOffset, 0)

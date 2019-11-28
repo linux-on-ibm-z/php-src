@@ -1193,14 +1193,14 @@ PHPAPI void php_implode(const zend_string *glue, zval *pieces, zval *return_valu
 		RETURN_EMPTY_STRING();
 	} else if (numelems == 1) {
 		/* loop to search the first not undefined element... */
-		ZEND_HASH_FOREACH_VAL(Z_ARRVAL_P(pieces), tmp) {
+		ZEND_HASH_FOREACH_VAL_IND(Z_ARRVAL_P(pieces), tmp) {
 			RETURN_STR(zval_get_string(tmp));
 		} ZEND_HASH_FOREACH_END();
 	}
 
 	ptr = strings = do_alloca((sizeof(*strings)) * numelems, use_heap);
 
-	ZEND_HASH_FOREACH_VAL(Z_ARRVAL_P(pieces), tmp) {
+	ZEND_HASH_FOREACH_VAL_IND(Z_ARRVAL_P(pieces), tmp) {
 		if (EXPECTED(Z_TYPE_P(tmp) == IS_STRING)) {
 			ptr->str = Z_STR_P(tmp);
 			len += ZSTR_LEN(ptr->str);
@@ -6068,8 +6068,8 @@ PHP_FUNCTION(strpbrk)
 	ZEND_PARSE_PARAMETERS_END();
 
 	if (!ZSTR_LEN(char_list)) {
-		php_error_docref(NULL, E_WARNING, "The character list cannot be empty");
-		RETURN_FALSE;
+		zend_value_error("The character list cannot be empty");
+		return;
 	}
 
 	for (haystack_ptr = ZSTR_VAL(haystack); haystack_ptr < (ZSTR_VAL(haystack) + ZSTR_LEN(haystack)); ++haystack_ptr) {

@@ -59,8 +59,8 @@ function krsort(array &$arg, int $sort_flags = SORT_REGULAR): bool {}
 
 function ksort(array &$arg, int $sort_flags = SORT_REGULAR): bool {}
 
-/** @param array|Countable $var */
-function count($var, int $mode = COUNT_NORAML): int {}
+/** @param mixed $var */
+function count($var, int $mode = COUNT_NORMAL): int {}
 
 function natsort(array &$arg): bool {}
 
@@ -80,38 +80,22 @@ function uasort(array &$arg, callable $cmp_function): bool {}
 
 function uksort(array &$arg, callable $cmp_function): bool {}
 
-/**
- * @param array|object $arg
- * @return mixed
- */
-function end(array &$arg) {}
+/** @return mixed */
+function end(array|object &$arg) {}
 
-/**
- * @param array|object $arg
- * @return mixed
- */
-function prev(&$arg) {}
+/** @return mixed */
+function prev(array|object &$arg) {}
 
-/**
- * @param array|object $arg
- * @return mixed
- */
-function next(&$arg) {}
+/** @return mixed */
+function next(array|object &$arg) {}
 
-/**
- * @param array|object $arg
- * @return mixed
- */
-function reset(&$arg) {}
+/** @return mixed */
+function reset(array|object &$arg) {}
 
-/**
- * @param array|object $arg
- * @return mixed
- */
-function current($arg) {}
+/** @return mixed */
+function current(array|object $arg) {}
 
-/** @param array|object $arg */
-function key($arg): int|string|null {}
+function key(array|object $arg): int|string|null {}
 
 /** @return mixed */
 function min($arg, ...$args) {}
@@ -119,11 +103,9 @@ function min($arg, ...$args) {}
 /** @return mixed */
 function max($arg, ...$args) {}
 
-/** @param array|object $input */
-function array_walk(&$input, callable $funcname, $userdata = null): bool {}
+function array_walk(array|object &$input, callable $funcname, $userdata = null): bool {}
 
-/** @param array|object $input */
-function array_walk_recursive(&$input, callable $funcname, $userdata = null): bool {}
+function array_walk_recursive(array|object &$input, callable $funcname, $userdata = null): bool {}
 
 function in_array($needle, array $haystack, bool $strict = false): bool {}
 
@@ -567,10 +549,6 @@ function explode(string $separator, string $str, int $limit = PHP_INT_MAX): arra
  */
 function implode($glue, $pieces = UNKNOWN): string {}
 
-/**
- * @param string $str Optional - defaults to previous string
- * @param string $token
- */
 function strtok(string $str, string $token = UNKNOWN): string|false {}
 
 function strtoupper(string $str): string {}
@@ -739,11 +717,8 @@ class Directory
  */
 function opendir(string $path, $context = UNKNOWN) {}
 
-/**
- * @param resource $context
- * @return Directory|false
- */
-function dir(string $path, $context = UNKNOWN) {}
+/** @param resource $context */
+function dir(string $path, $context = UNKNOWN): Directory|false {}
 
 /** @param resource $dir_handle */
 function closedir($dir_handle = UNKNOWN): void {}
@@ -883,8 +858,7 @@ function mail(string $to, string $subject, string $message, $additional_headers 
 
 /* math.c */
 
-/** @param int|float $number */
-function abs($number): int|float {}
+function abs(int|float $number): int|float {}
 
 function ceil(float $number): float {}
 
@@ -991,7 +965,7 @@ function unpack(string $format, string $data, int $offset = 0): array|false {}
 
 function password_get_info(string $hash): ?array {}
 
-function password_hash(string $password, $algo, array $options = []): string|false|null {}
+function password_hash(string $password, $algo, array $options = []): ?string {}
 
 function password_needs_rehash(string $hash, $algo, array $options = []): bool {}
 
