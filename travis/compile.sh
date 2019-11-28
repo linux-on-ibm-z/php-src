@@ -26,7 +26,7 @@ fi
 MAKE_JOBS=${MAKE_JOBS:-$(nproc)}
 
 ./buildconf --force
-./configure --without-pcre-jit
+./configure
 # --enable-option-checking=fatal \
 # --prefix="$HOME"/php-install \
 # $CONFIG_QUIET \
