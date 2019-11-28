@@ -74,15 +74,14 @@ jobs:
           arch: amd64
         - env: ENABLE_ZTS=0 ENABLE_DEBUG=0
           arch: s390x
-
-before_install:
-  - sudo /etc/init.d/postgresql stop || true
-  - sudo apt-get --purge remove postgresql-*
-  - sudo rm -Rf /etc/postgresql /var/lib/postgresql
-  - wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
-  - sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt/ precise-pgdg main 9.5" >> /etc/apt/sources.list.d/postgresql.list'
-  - sudo apt-get update
-  - sudo apt-get install postgresql-9.5
+          before_install:
+            - sudo /etc/init.d/postgresql stop || true
+            - sudo apt-get --purge remove postgresql-*
+            - sudo rm -Rf /etc/postgresql /var/lib/postgresql
+            - wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
+            - sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt/ precise-pgdg main 9.5" >> /etc/apt/sources.list.d/postgresql.list'
+            - sudo apt-get update
+            - sudo apt-get install postgresql-9.5
 
 before_script:
     - ccache --version
@@ -96,7 +95,6 @@ before_script:
     - if [ "$HOSTTYPE" == "s390x" ]; then sudo sed -i '85s/peer/trust/' /etc/postgresql/9.5/main/pg_hba.conf; sudo cat /etc/postgresql/9.5/main/pg_hba.conf ;fi      
     - ./travis/setup-mysql.sh
     - ./travis/setup-pgsql.sh
-    - make test
 
 # Run PHPs run-tests.php
 script:

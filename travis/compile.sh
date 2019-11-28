@@ -26,58 +26,58 @@ fi
 MAKE_JOBS=${MAKE_JOBS:-$(nproc)}
 
 ./buildconf --force
-./configure \
---enable-option-checking=fatal \
---prefix="$HOME"/php-install \
-$CONFIG_QUIET \
-$DEBUG \
-$TS \
---enable-phpdbg \
---enable-fpm \
---with-pdo-mysql=mysqlnd \
---with-mysqli=mysqlnd \
---with-pgsql \
---with-pdo-pgsql \
---with-pdo-sqlite \
---enable-intl \
---without-pear \
---enable-gd \
---with-jpeg \
---with-webp \
---with-freetype \
---with-xpm \
---enable-exif \
---with-zip \
---with-zlib \
---with-zlib-dir=/usr \
---enable-soap \
---enable-xmlreader \
---with-xsl \
---with-tidy \
---with-xmlrpc \
---enable-sysvsem \
---enable-sysvshm \
---enable-shmop \
---enable-pcntl \
---with-readline \
---enable-mbstring \
---with-curl \
---with-gettext \
---enable-sockets \
---with-bz2 \
---with-openssl \
---with-gmp \
---enable-bcmath \
---enable-calendar \
---enable-ftp \
---with-pspell=/usr \
---with-enchant=/usr \
---with-kerberos \
---enable-sysvmsg \
---with-ffi \
---enable-zend-test=shared \
---with-pear \
---without-pcre-jit
+./configure 
+# --enable-option-checking=fatal \
+# --prefix="$HOME"/php-install \
+# $CONFIG_QUIET \
+# $DEBUG \
+# $TS \
+# --enable-phpdbg \
+# --enable-fpm \
+# --with-pdo-mysql=mysqlnd \
+# --with-mysqli=mysqlnd \
+# --with-pgsql \
+# --with-pdo-pgsql \
+# --with-pdo-sqlite \
+# --enable-intl \
+# --without-pear \
+# --enable-gd \
+# --with-jpeg \
+# --with-webp \
+# --with-freetype \
+# --with-xpm \
+# --enable-exif \
+# --with-zip \
+# --with-zlib \
+# --with-zlib-dir=/usr \
+# --enable-soap \
+# --enable-xmlreader \
+# --with-xsl \
+# --with-tidy \
+# --with-xmlrpc \
+# --enable-sysvsem \
+# --enable-sysvshm \
+# --enable-shmop \
+# --enable-pcntl \
+# --with-readline \
+# --enable-mbstring \
+# --with-curl \
+# --with-gettext \
+# --enable-sockets \
+# --with-bz2 \
+# --with-openssl \
+# --with-gmp \
+# --enable-bcmath \
+# --enable-calendar \
+# --enable-ftp \
+# --with-pspell=/usr \
+# --with-enchant=/usr \
+# --with-kerberos \
+# --enable-sysvmsg \
+# --with-ffi \
+# --enable-zend-test=shared \
+# --with-pear \
+# --without-pcre-jit
 
 make "-j${MAKE_JOBS}" $MAKE_QUIET
 make install
