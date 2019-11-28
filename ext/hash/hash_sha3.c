@@ -56,7 +56,7 @@ static inline void store64(unsigned char* x, uint64_t val) {
 	}
 }
 static inline void xor64(unsigned char* x, uint64_t val) {
-	char i;
+	unsigned char i;
 	for (i = 0; i < 8; ++i) {
 		x[i] ^= val & 0xFF;
 		val >>= 8;
