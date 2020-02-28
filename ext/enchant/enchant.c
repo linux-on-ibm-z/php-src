@@ -667,7 +667,7 @@ PHP_FUNCTION(enchant_dict_quick_check)
 	PHP_ENCHANT_GET_DICT;
 
 	if (enchant_dict_check(pdict->pdict, word, wordlen) > 0) {
-		int n_sugg;
+		size_t n_sugg;
 		size_t n_sugg_st;
 		char **suggs;
 
@@ -720,7 +720,7 @@ PHP_FUNCTION(enchant_dict_suggest)
 	size_t wordlen;
 	char **suggs;
 	enchant_dict *pdict;
-	int n_sugg;
+	size_t n_sugg;
 	size_t n_sugg_st;
 
 	if (zend_parse_parameters(ZEND_NUM_ARGS(), "rs", &dict, &word, &wordlen) == FAILURE) {
