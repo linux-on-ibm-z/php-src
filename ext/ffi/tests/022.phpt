@@ -61,8 +61,14 @@ test_size(32, "struct {char a; uint32_t b __attribute__((aligned(16)));}");
 test_align(16, "struct {char a; uint32_t b __attribute__((aligned(16)));}");
 
 if (substr(PHP_OS, 0, 3) != 'WIN') {
-    test_size(32, "struct  {char a; uint32_t b __attribute__((aligned));}");
-    test_align(16, "struct  {char a; uint32_t b __attribute__((aligned));}");
+    if(PHP_uname('m') == 's390x') {
+       test_size(16, "struct  {char a; uint32_t b __attribute__((aligned));}");
+       test_align(8, "struct  {char a; uint32_t b __attribute__((aligned));}");
+    }
+    else {
+       test_size(32, "struct  {char a; uint32_t b __attribute__((aligned));}");
+       test_align(16, "struct  {char a; uint32_t b __attribute__((aligned));}");
+    }
 }
 
 test_size(16, "struct  __declspec(align(16)) {char a; uint32_t b;}");
