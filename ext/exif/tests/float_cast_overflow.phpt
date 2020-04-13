@@ -1,5 +1,9 @@
 --TEST--
 Overflow in float to int cast
+--SKIPIF--
+<?php
+if (pack('s', 1) != "\x01\x00")
+        die("skip test for little-endian architectures");
 --FILE--
 <?php
 
